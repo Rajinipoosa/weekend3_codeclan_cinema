@@ -19,12 +19,12 @@ class Film
   #   SqlRunner.run(sql)
   # end
 
-  # def self.all()
-  #   sql = "SELECT * FROM films"
-  #    result = SqlRunner.run(sql)
-  #   films = result.map{|film| Film.new(film)}
-  #   return films
-  #  end
+  def self.all()
+    sql = "SELECT * FROM films"
+     result = SqlRunner.run(sql)
+    films = result.map{|film| Film.new(film)}
+    return films
+   end
  
 
 end

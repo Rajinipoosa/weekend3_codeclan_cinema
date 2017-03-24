@@ -17,11 +17,11 @@ class Ticket
 
 
 
-  # def self.all()
-  #   sql = "SELECT * FROM tickets"
-  #   result = SqlRunner.run(sql)
-  #   tickets = result.map{|ticket| Ticket.new(ticket)}
-  #   return tickets
-  # end
+  def self.all()
+    sql = "SELECT * FROM tickets"
+    result = SqlRunner.run(sql)
+    tickets = result.map{|ticket| Ticket.new(ticket)}
+    return tickets
+  end
 
 end

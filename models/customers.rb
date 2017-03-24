@@ -18,12 +18,12 @@ class Customer
 
 #  end
 
-#  def self.all()
-#   sql = "SELECT * FROM customers"
-#   result = SqlRunner.run(sql)
-#   customers = result.map{|customer| Customer.new(customer)}
-#   return customers
-# end
+ def self.all()
+  sql = "SELECT * FROM customers"
+  result = SqlRunner.run(sql)
+  customers = result.map{|customer| Customer.new(customer)}
+  return customers
+end
 
 
 end
