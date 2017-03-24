@@ -14,10 +14,10 @@ class Film
       @id = film['id'].to_i
   end
 
-  # def update()
-  #  sql = "UPDATE films SET(title, price) = ('#{@title}',#{@price})"
-  #   SqlRunner.run(sql)
-  # end
+  def update()
+   sql = "UPDATE films SET(title, price) = ('#{@title}',#{@price})"
+    SqlRunner.run(sql)
+  end
 
   def self.all()
     sql = "SELECT * FROM films"

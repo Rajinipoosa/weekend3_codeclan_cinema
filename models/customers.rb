@@ -12,11 +12,11 @@ class Customer
    customer = SqlRunner.run(sql).first()
    @id = customer['id'].to_i
  end
-#  def update()
-#    sql = "UPDATE customers SET (name ,funds) = ('#{@name}', #{@funds})"
-#      SqlRunner.run(sql)
+ def update()
+   sql = "UPDATE customers SET (name ,funds) = ('#{@name}', #{@funds})"
+     SqlRunner.run(sql)
 
-#  end
+ end
 
  def self.all()
   sql = "SELECT * FROM customers"

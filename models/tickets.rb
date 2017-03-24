@@ -9,11 +9,12 @@ class Ticket
     ticket = SqlRunner.run(sql).first()
     @id = ticket['id'].to_i
   end
-  # def update()
-  #   sql = "UPDATE tickets SET (film_id ,customer_id) = ('#{@film_id}', #{@customer_id})"
-  #     SqlRunner.run(sql)
+  
+  def update()
+    sql = "UPDATE tickets SET (film_id ,customer_id) = ('#{@film_id}', #{@customer_id})"
+      SqlRunner.run(sql)
 
-  # end
+  end
 
 
 
