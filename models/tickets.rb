@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner')
+
 class Ticket
   def initialize(options)
     @id = options['id'].to_i
@@ -9,12 +11,12 @@ class Ticket
     ticket = SqlRunner.run(sql).first()
     @id = ticket['id'].to_i
   end
-  
-  def update()
-    sql = "UPDATE tickets SET (film_id ,customer_id) = ('#{@film_id}', #{@customer_id})"
-      SqlRunner.run(sql)
 
-  end
+  # def update()
+  #   sql = "UPDATE tickets SET (film_id ,customer_id) = ('#{@film_id}', #{@customer_id})"
+  #     SqlRunner.run(sql)
+
+  # end
 
 
 
@@ -24,5 +26,11 @@ class Ticket
     tickets = result.map{|ticket| Ticket.new(ticket)}
     return tickets
   end
+
+  def self.delete_all()
+    sql = "DELETE FROM tickets"
+      SqlRunner.run(sql)
+  end
+
 
 end
