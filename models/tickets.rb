@@ -1,6 +1,9 @@
 require_relative('../db/sql_runner')
+require_relative('customers')
+
 
 class Ticket
+  attr_reader :id, :film_id, :customer_id
   def initialize(options)
     @id = options['id'].to_i
     @film_id = options['film_id'].to_i
@@ -17,7 +20,7 @@ class Ticket
   #     SqlRunner.run(sql)
 
   # end
-
+ 
 
 
   def self.all()
